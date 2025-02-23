@@ -24,20 +24,20 @@ export interface UserViewModel {
     description?: string;
     participants: string[];
     meetingRoomId?: string;
+    meetingRoomName?: string;
     createdTime: Date; 
   }
   
-  export interface MeetingCreateRequest {
+  export interface BookMeetingRequest {
     name: string;
-    creatorId: string;
     startTime: string;
     endTime: string;
-    description?: string;
     participants: string[];
-    meetingRoomId?: string;
+    description: string;
+    meetingRoomId: string;
   }
   
-  export type MeetingUpdateRequest = Partial<MeetingCreateRequest> & { id: string };
+  
 
   export interface MeetingRoomViewModel {
     id: string;

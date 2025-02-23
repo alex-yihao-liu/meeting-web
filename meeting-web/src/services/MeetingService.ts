@@ -1,4 +1,4 @@
-import { MeetingViewModel, UserCreateRequest, UserUpdateRequest, UserViewModel } from "./models/Models";
+import { MeetingViewModel, UserCreateRequest, UserUpdateRequest, UserViewModel, BookMeetingRequest } from "./models/Models";
 
 // src/api/client.ts
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
@@ -60,31 +60,24 @@ export const meetingApi = {
     return handleResponse(response);
   },
 
-//   async create(meeting: MeetingCreateRequest): Promise<MeetingViewModel> {
-//     const response = await fetch(`${API_BASE}/meeting`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(meeting),
-//     });
-//     return handleResponse(response);
-//   },
-
-//   async update(id: string, meeting: MeetingUpdateRequest): Promise<void> {
-//     const response = await fetch(`${API_BASE}/meeting/${id}`, {
-//       method: 'PUT',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(meeting),
-//     });
-//     await handleResponse(response);
-//   },
+  async bookMeeting(meeting: BookMeetingRequest): Promise<MeetingViewModel> {
+    const response = await fetch(`${API_BASE}/meeting`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(meeting),
+    });
+    return handleResponse(response);
+  },
 
   async delete(id: string): Promise<void> {
     const response = await fetch(`${API_BASE}/meeting/${id}`, {
       method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
     });
     await handleResponse(response);
   },

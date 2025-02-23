@@ -23,7 +23,7 @@ export default function MeetingCard(props: MeetingCardProps) {
             <CardContent>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                        {props.meeting.meetingRoomId}
+                        {props.meeting.meetingRoomName}
                     </Typography>
                     <Typography variant="h5" component="div" >
                         {props.meeting.name}

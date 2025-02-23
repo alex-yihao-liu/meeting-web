@@ -54,7 +54,8 @@ export default function LoginPage() {
                     <OutlinedInput
 
                         id="component-outlined"
-                        value={password }
+                        value={password}
+                        type='password'
                         onChange={(e) => setPassword(e.target.value)}
                         label="Name"
                     />

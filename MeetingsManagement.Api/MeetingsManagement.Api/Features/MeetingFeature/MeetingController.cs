@@ -58,6 +58,7 @@ public class MeetingController(MeetingManagementDbContext dbContext) : Controlle
                 Description = x.Description,
                 Participants = x.Participants,
                 MeetingRoomId = x.MeetingRoomId,
+                MeetingRoomName = x.MeetingRoom.Name,
                 CreatedTime = x.CreatedTime
             })
             .ToListAsync();

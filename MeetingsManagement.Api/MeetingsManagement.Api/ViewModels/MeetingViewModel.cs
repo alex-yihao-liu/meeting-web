@@ -12,4 +12,5 @@ public class MeetingViewModel
     public string? Description { get; set; }
     public List<string> Participants { get; set; } = [];
     public Guid MeetingRoomId { get; set; }
+    public string? MeetingRoomName { get; set; }
 }

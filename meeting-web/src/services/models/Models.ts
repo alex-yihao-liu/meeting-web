@@ -19,8 +19,8 @@ export interface UserViewModel {
     id: string;
     name: string;
     creatorId: string;
-    startTime: Date; 
-    endTime: Date;
+    startTime: string; 
+    endTime: string;
     description?: string;
     participants: string[];
     meetingRoomId?: string;
